@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintetizzatore Motore V8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        <h2>Simulatore Motore</h2>
+        <button id="accensioneBtn" onclick="toggleMotore()">Accendi Motore</button>
+        
+        <div class="slider-container">
+            <label for="acceleratore">Acceleratore (Giri/Min)</label>
+            <input type="range" id="acceleratore" min="800" max="8000" value="800" oninput="aggiornaRPM(this.value)" disabled>
+            <span class="rpm-display" id="rpmTesto">800 RPM</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
