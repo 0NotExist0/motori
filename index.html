@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sintetizzatore Motore V8</title>
+    <title>Engine Synth Advanced</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="header">
+                <h1>Engine Synth</h1>
+                <p>Generatore procedurale avanzato</p>
+            </div>
 
-    <div class="dashboard">
-        <h2>Simulatore Motore</h2>
-        <button id="accensioneBtn" onclick="toggleMotore()">Accendi Motore</button>
-        
-        <div class="slider-container">
-            <label for="acceleratore">Acceleratore (Giri/Min)</label>
-            <input type="range" id="acceleratore" min="800" max="8000" value="800" oninput="aggiornaRPM(this.value)" disabled>
-            <span class="rpm-display" id="rpmTesto">800 RPM</span>
+            <div class="gauge-container">
+                <svg class="gauge-bg" viewBox="0 0 100 100">
+                    <path d="M 20 80 A 45 45 0 1 1 80 80" fill="none" stroke="#27272a" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M 71.8 28.2 A 45 45 0 0 1 80 80" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+
+                <div class="needle-container" id="needle">
+                    <div class="needle-bar"></div>
+                    <div class="needle-center"></div>
+                </div>
+
+                <div class="digital-readout">
+                    <span id="rpm-display">0000</span>
+                    <span class="rpm-label">RPM</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="btn-ignition" class="btn-ignition">Ignition</button>
+                
+                <div class="grid-2">
+                    <button id="btn-idle" class="btn-secondary" disabled>Idle</button>
+                    <button id="btn-rev" class="btn-secondary" disabled>Quick Rev</button>
+                </div>
+
+                <button id="btn-accel" class="btn-accel" disabled>Accelerate</button>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="audioEngine.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
